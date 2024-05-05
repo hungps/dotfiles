@@ -4,12 +4,6 @@
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/hungps/.oh-my-zsh"
 
-##################################################################
-
-#
-# Global env variables
-#
-
 # Xcode
 export SDKROOT=$(xcrun -sdk macosx --show-sdk-path)
 
@@ -25,9 +19,7 @@ eval "$(rbenv init - zsh)"
 # Homebrew
 export DYLD_LIBRARY_PATH="/opt/homebrew/lib:$DYLD_LIBRARY_PATH"
 
-#
 # PATH binding
-#
 export PATH="$PATH:$GEM_HOME/bin"
 export PATH="$PATH:/usr/local/bin"
 export PATH="$PATH:$FLUTTER_ROOT/bin"
@@ -35,18 +27,17 @@ export PATH="$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$ANDROID_HOM
 export PATH="$PATH:$FLUTTER_ROOT/.pub-cache/bin"
 export PATH="$PATH:$HOME/.pub-cache/bin"
 
-#
 # Aliases
-#
-
 # Use x86_64 cocoapods for M1 chip
 alias pod='arch -x86_64 pod'
 
+# Use neovim instead of vim
+alias vim="nvim"
+alias vi="nvim"
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-#
 # Dependencies setup
-#
 
 # nvm
 export NVM_DIR="$HOME/.nvm"
@@ -169,19 +160,3 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-## [Completion] 
-## Completion scripts setup. Remove the following line to uninstall
-[[ -f /Users/hungps/.dart-cli-completion/zsh-config.zsh ]] && . /Users/hungps/.dart-cli-completion/zsh-config.zsh || true
-## [/Completion]
-
-# zsh-github-copilot
-bindkey '^\' zsh_gh_copilot_explain  # bind Ctrl+\ to explain
-bindkey '^[\' zsh_gh_copilot_suggest  # bind Alt+\ to suggest
-
-# zoxide
-eval "$(zoxide init --cmd cd zsh)"
