@@ -1,5 +1,18 @@
+import = [
+  "~/.config/alacritty/catppuccin-macchiato.toml"
+]
+
 [env]
 TERM = "xterm-256color"
+
+[shell]
+program = "/opt/homebrew/bin/tmux"
+
+[window]
+option_as_alt = "Both"
+dynamic_title = true
+resize_increments = true
+dynamic_padding = true
 
 [font]
 normal = { family = "JetBrainsMono Nerd Font", style = "Regular" }
@@ -7,3 +20,4 @@ bold = { family = "JetBrainsMono Nerd Font", style = "Bold" }
 italic = { family = "JetBrainsMono Nerd Font", style = "Italic" }
 bold_italic = { family = "JetBrainsMono Nerd Font", style = "Bold Italic" }
 size = 13
+
