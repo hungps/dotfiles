@@ -48,10 +48,6 @@ export NVM_DIR="$HOME/.nvm"
 [[ -f /Users/hungps/.dart-cli-completion/zsh-config.zsh ]] && . /Users/hungps/.dart-cli-completion/zsh-config.zsh || true
 ## [/Completion]
 
-# zsh-github-copilot
-bindkey '^\' zsh_gh_copilot_explain  # bind Ctrl+\ to explain
-bindkey '^[\' zsh_gh_copilot_suggest  # bind Alt+\ to suggest
-
 # zoxide
 eval "$(zoxide init --cmd cd zsh)"
 
@@ -127,7 +123,6 @@ plugins=(
   adb
   colorize
   vscode
-  zsh-github-copilot
 )
 
 export ZSH_COMPDUMP=$ZSH/cache/.zcompdump-$HOST
