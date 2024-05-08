@@ -13,8 +13,8 @@ export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk-16.0.2.jdk/Contents/Home
 export FLUTTER_ROOT="$HOME/fvm/default"
 
 # Ruby
-export GEM_HOME="$(ruby -e 'puts Gem.user_dir')"
 eval "$(rbenv init - zsh)"
+export GEM_HOME="$(ruby -e 'puts Gem.user_dir')"
 
 # Homebrew
 export DYLD_LIBRARY_PATH="/opt/homebrew/lib:$DYLD_LIBRARY_PATH"
@@ -35,20 +35,10 @@ alias pod='arch -x86_64 pod'
 alias vim="nvim"
 alias vi="nvim"
 
+# Neovim dependencies
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# Dependencies setup
-
-# nvm
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-## [Completion]
-## Completion scripts setup. Remove the following line to uninstall
-[[ -f /Users/hungps/.dart-cli-completion/zsh-config.zsh ]] && . /Users/hungps/.dart-cli-completion/zsh-config.zsh || true
-## [/Completion]
-
-# zoxide
+# Zoxide
 eval "$(zoxide init --cmd cd zsh)"
 
 ###########################################################################
@@ -117,12 +107,15 @@ ZSH_THEME="refined" #"robbyrussell"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
+zstyle ':omz:plugins:nvm' lazy yes
+
 plugins=(
   git
-  zsh-autosuggestions
   adb
-  colorize
-  vscode
+  nvm
+  fzf
+  zsh-syntax-highlighting
+  zsh-autosuggestions
 )
 
 export ZSH_COMPDUMP=$ZSH/cache/.zcompdump-$HOST
