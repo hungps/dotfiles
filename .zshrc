@@ -12,20 +12,18 @@ export ANDROID_HOME="$HOME/Library/Android/sdk"
 export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk-16.0.2.jdk/Contents/Home"
 export FLUTTER_ROOT="$HOME/fvm/default"
 
-# Ruby
-eval "$(rbenv init - zsh)"
-export GEM_HOME="$(ruby -e 'puts Gem.user_dir')"
-
 # Homebrew
 export DYLD_LIBRARY_PATH="/opt/homebrew/lib:$DYLD_LIBRARY_PATH"
 
 # PATH binding
-export PATH="$PATH:$GEM_HOME/bin"
 export PATH="$PATH:/usr/local/bin"
 export PATH="$PATH:$FLUTTER_ROOT/bin"
 export PATH="$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$ANDROID_HOME/emulator"
 export PATH="$PATH:$FLUTTER_ROOT/.pub-cache/bin"
 export PATH="$PATH:$HOME/.pub-cache/bin"
+
+# Ruby
+eval "$(rbenv init - zsh)"
 
 # Aliases
 # Use x86_64 cocoapods for M1 chip
