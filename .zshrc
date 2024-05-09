@@ -2,14 +2,14 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/hungps/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 # Xcode
 export SDKROOT=$(xcrun -sdk macosx --show-sdk-path)
 
 # Flutter related
+export JAVA_HOME=$(/usr/libexec/java_home -v 19)
 export ANDROID_HOME="$HOME/Library/Android/sdk"
-export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk-16.0.2.jdk/Contents/Home"
 export FLUTTER_ROOT="$HOME/fvm/default"
 
 # Homebrew
@@ -18,9 +18,8 @@ export DYLD_LIBRARY_PATH="/opt/homebrew/lib:$DYLD_LIBRARY_PATH"
 # PATH binding
 export PATH="$PATH:/usr/local/bin"
 export PATH="$PATH:$FLUTTER_ROOT/bin"
-export PATH="$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$ANDROID_HOME/emulator"
 export PATH="$PATH:$FLUTTER_ROOT/.pub-cache/bin"
-export PATH="$PATH:$HOME/.pub-cache/bin"
+export PATH="$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$ANDROID_HOME/emulator"
 
 # Ruby
 eval "$(rbenv init - zsh)"
@@ -34,7 +33,7 @@ alias vim="nvim"
 alias vi="nvim"
 
 # Neovim dependencies
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+eval "$(fzf --zsh)"
 
 # Zoxide
 eval "$(zoxide init --cmd cd zsh)"
@@ -105,7 +104,7 @@ ZSH_THEME="refined" #"robbyrussell"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-zstyle ':omz:plugins:nvm' lazy yes
+# zstyle ':omz:plugins:nvm' lazy yes
 
 plugins=(
   git
