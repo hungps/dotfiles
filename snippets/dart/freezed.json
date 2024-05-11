@@ -1,0 +1,57 @@
+{
+  "Create freezed file": {
+    "description": "Create freezed file",
+    "scope": "dart",
+    "prefix": "frzf",
+    "body": [
+      "import 'package:flutter/foundation.dart';",
+      "import 'package:freezed_annotation/freezed_annotation.dart';",
+      "",
+      "part '${1:file_name}.freezed.dart';",
+      "part '${1:file_name}.g.dart';",
+      "",
+      "@freezed",
+      "class ${2:name} with _$${2:name} {",
+      "  const factory ${2:name}({",
+      "    required ${3:type} ${4:fieldName},",
+      "  }) = _${2:name};",
+      "",
+      "  factory ${2:name}.fromJson(Map<String, dynamic> json)",
+      "      => _$${2:name}FromJson(json);",
+      "}"
+    ]
+  },
+  "Create freezed class": {
+    "description": "Create freezed class",
+    "scope": "dart",
+    "prefix": "frzc",
+    "body": [
+      "@freezed",
+      "class ${1:name} with _$${1:name} {",
+      "  const factory ${1:name}({",
+      "    required ${2:type} ${3:fieldName},",
+      "  }) = _${1:name};",
+      "",
+      "  factory ${1:name}.fromJson(Map<String, dynamic> json)",
+      "      => _$${1:name}FromJson(json);",
+      "}"
+    ]
+  },
+  "Create freezed abstract class": {
+    "description": "Create freezed abstract class",
+    "scope": "dart",
+    "prefix": "frzac",
+    "body": [
+      "@Freezed(genericArgumentFactories: true)",
+      "class ${1:name}<T> with _$${1:name}<T> {",
+      "  const factory ${1:name}({",
+      "    required List<T> data,",
+      "    required ${2:type} ${3:fieldName},",
+      "  }) = _${1:name};",
+      "",
+      "  factory ${1:name}.fromJson(Map<String, dynamic> json, T Function(Object?) fromJsonT)",
+      "      => _$${1:name}FromJson(json, fromJsonT);",
+      "}"
+    ]
+  }
+}
