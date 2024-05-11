@@ -15,14 +15,15 @@ export FLUTTER_ROOT="$HOME/fvm/default"
 # Homebrew
 export DYLD_LIBRARY_PATH="/opt/homebrew/lib:$DYLD_LIBRARY_PATH"
 
+# Ruby
+eval "$(rbenv init - zsh)"
+
 # PATH binding
 export PATH="$PATH:/usr/local/bin"
 export PATH="$PATH:$FLUTTER_ROOT/bin"
 export PATH="$PATH:$FLUTTER_ROOT/.pub-cache/bin"
 export PATH="$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$ANDROID_HOME/emulator"
-
-# Ruby
-eval "$(rbenv init - zsh)"
+export PATH="$PATH:$(gem env home)/bin"
 
 # Aliases
 # Use x86_64 cocoapods for M1 chip
