@@ -11,12 +11,16 @@ tap "leoafarias/fvm"
 brew "python@3.12"
 # Easiest way to build and release mobile apps
 brew "fastlane"
+# Simple, fast and user-friendly alternative to find
+brew "fd"
 # Play, record, convert, and stream audio and video
 brew "ffmpeg"
 # Command-line fuzzy finder written in Go
 brew "fzf"
 # Distributed revision control system
 brew "git"
+# Open source programming language to build simple/reliable/efficient software
+brew "go"
 # Simple terminal UI for git commands
 brew "lazygit"
 # Mac App Store command-line interface
@@ -27,6 +31,8 @@ brew "neovim"
 brew "python@3.9"
 # Ruby version manager
 brew "rbenv"
+# Search tool like grep and The Silver Searcher
+brew "ripgrep"
 # Organize software neatly under a single directory tree (e.g. /usr/local)
 brew "stow"
 # Terminal multiplexer
