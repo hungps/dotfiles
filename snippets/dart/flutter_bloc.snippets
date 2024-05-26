@@ -1,0 +1,46 @@
+snippet fbsf
+        import 'package:flutter/foundation.dart';
+        import 'package:freezed_annotation/freezed_annotation.dart';
+
+        part '${1:page_path}_state.freezed.dart';
+
+        enum ${2:Page}Status {
+          initial,
+          loading,
+          loaded,
+          failure,
+        }
+
+        @freezed
+        class ${2:Page}State with _$${2:Page}State {
+          const factory ${2:Page}State({
+            @Default(${2:Page}Status.initial) ${2:Page}Status status,${0}
+          }) = _${2:Page}State;
+        }
+
+snippet fbef
+        import 'package:flutter/foundation.dart';
+        import 'package:freezed_annotation/freezed_annotation.dart';
+
+        part '${1:page_path}_event.freezed.dart';
+
+        @freezed
+        sealed class ${2:Page}Event with _$${2:Page}Event {
+          factory ${2:Page}Event.errorOccurred([Exception? error]) = ${2:Page}ErrorOccurred;${0}
+
+          factory ${2:Page}Event.${3}() = ${2:Page}${4:EventName};${0}
+        }
+
+snippet fbev
+        factory ${2:Page}Event.${3}() = ${2:Page}${4:EventName};${0}
+
+snippet fbb
+        import 'package:flutter_bloc/flutter_bloc.dart';
+
+        final class ${1}Bloc extends Bloc<${1}Event, ${1}State> {
+          ${1}Bloc()  : super(const ${1}State()) {
+            ${0}
+          }
+        }
+
+

@@ -1,0 +1,80 @@
+# Create freezed file
+snippet frzf
+        import 'package:flutter/foundation.dart';
+        import 'package:freezed_annotation/freezed_annotation.dart';
+
+        part '${1:file_name}.freezed.dart';
+
+        @freezed
+        class ${2:name} with _$${2:name} {
+          const factory ${2:name}({
+            required ${3:type} ${4:fieldName},${0}
+          }) = _${2:name};
+        }
+
+# Create freezed file (with json)
+snippet frzfj
+        import 'package:flutter/foundation.dart';
+        import 'package:freezed_annotation/freezed_annotation.dart';
+
+        part '${1:file_name}.freezed.dart';
+        part '${1:file_name}.g.dart';
+
+        @freezed
+        class ${2:name} with _$${2:name} {
+          const factory ${2:name}({
+            required ${3:type} ${4:fieldName},${0}
+          }) = _${2:name};
+
+          factory ${2:name}.fromJson(Map<String, dynamic> json)
+              => _$${2:name}FromJson(json);
+        }
+
+# Create freezed class
+snippet frzc
+        @freezed
+        class ${1:name} with _$${1:name} {
+          const factory ${1:name}({
+            required ${2:type} ${3:fieldName},${0}
+          }) = _${1:name};
+        }
+
+# Create freezed class (with json)
+snippet frzcj
+        @freezed
+        class ${1:name} with _$${1:name} {
+          const factory ${1:name}({
+            required ${2:type} ${3:fieldName},${0}
+          }) = _${1:name};
+
+          factory ${1:name}.fromJson(Map<String, dynamic> json)
+              => _$${1:name}FromJson(json);
+        }
+
+# Create freezed abstract class
+snippet frzac
+        @Freezed(genericArgumentFactories: true)
+        class ${1:name}<T> with _$${1:name}<T> {
+          const factory ${1:name}({
+            required ${2:type} ${3:fieldName},${0}
+          }) = _${1:name};
+        }
+
+# Create freezed abstract class (with json)
+snippet frzacj
+        @Freezed(genericArgumentFactories: true)
+        class ${1:name}<T> with _$${1:name}<T> {
+          const factory ${1:name}({
+            required ${2:type} ${3:fieldName},${0}
+          }) = _${1:name};
+
+          factory ${1:name}.fromJson(Map<String, dynamic> json, T Function(Object?) fromJsonT)
+              => _$${1:name}FromJson(json, fromJsonT);
+        }
+
+snippet @Def
+        @Default(${1}) ${2:required} ${3:Type} ${4:fieldName};${0}
+
+snippet frzfact
+        ${1:const} factory ${2:Class}.${3:constructorName}() = _${2:Page}${4:ConstructorName};${0}
+

@@ -1,0 +1,139 @@
+snippet af
+        (${1:params}) {${0}}
+
+snippet pr
+        print(${1});
+
+snippet imp
+        import 'package:${1:package}/${2:file}.dart';
+        ${0}
+
+snippet rege
+        RegExp(r'${1}')
+
+snippet main
+        main() {
+          ${0}
+        }
+
+snippet sta
+        static ${1}
+
+snippet cons
+        const ${1:field} = ${2:value};
+        ${0}
+
+snippet fi
+        final ${1:field} = ${2:value};
+        ${0}
+
+snippet requi
+        required ${1:Type} ${2:field};${0}
+
+snippet re
+        return ${1:value};
+
+snippet br
+        break;
+
+snippet th
+        throw ${1:Exception};
+
+snippet seal
+        sealed ${1}
+
+snippet base
+        base ${1}
+
+snippet cla
+        class ${1}
+
+snippet inter
+        interface ${1}
+
+snippet impl
+        implements ${0}
+
+snippet extnd
+        extends ${1}
+
+snippet extens
+        extension ${1} on ${2} {
+          ${0}
+        }
+
+snippet if
+        if (${1}) {
+          ${0}
+        }
+
+snippet ife
+        if (${1}) {
+          ${2}
+        } else {
+          ${3}
+        }
+
+snippet el
+        else
+
+snippet sw
+        switch (${1}) {
+          ${0}
+        }
+
+snippet cas
+        case ${1}:
+          ${0}
+
+snippet retsw
+        return switch (${1}) {
+          ${2} => ${3},${0}
+        }
+
+snippet defa
+        default:
+          ${0}
+
+snippet for
+        for (var ${1:i} = 0; ${1} < ${2}; ${1:++}) {
+          ${0}
+        }
+
+snippet fore
+        for (final ${1:item} in ${2:itemList}) {
+          ${0}
+        }
+
+snippet whi
+        while ($1) {
+          ${0}
+        }
+
+snippet do
+        do {
+          ${0}
+        } while ($1);
+
+snippet ass
+        assert($1);
+
+snippet try
+        try {
+          ${0}
+        } catch (${1:Exception e}) {
+          ${2}
+        }
+
+snippet tryf
+        try {
+          ${0}
+        } catch (${1:Exception e}) {
+          ${2}
+        } finally {
+          ${3}
+        }
+
+snippet Futu
+        Future<${1}>
+
