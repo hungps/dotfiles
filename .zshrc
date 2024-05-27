@@ -96,3 +96,4 @@ alias pod='arch -x86_64 pod'
 alias vim="nvim"
 alias vi="nvim"
 alias ls='ls --color'
+alias ssh="TERM=xterm-256color $(which ssh)"
