@@ -1,5 +1,10 @@
-snippet af
-        (${1:params}) {${0}}
+snippet ({
+        (${1}) {
+          ${0}
+        }
+
+snippet (=>
+        (${1}) => ${0}
 
 snippet pr
         print(${1});
@@ -136,4 +141,20 @@ snippet tryf
 
 snippet Futu
         Future<${1}>
+
+snippet constr
+        ${1:const }${1:Some.constructor}(${0});
+
+snippet getter
+        ${1:Type} get ${2:field} => ${3:value};
+
+snippet privateGetter
+        ${1:Type} _${2:field}${3: = ${4:value}}
+        ${1:Type} get ${2:field} => _${2:field};
+
+snippet setter
+        ${1:void} ${2:_setSomething}(${3:Type} ${4:field}) {
+          ${0}
+        }
+
 

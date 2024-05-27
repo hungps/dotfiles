@@ -115,3 +115,128 @@ snippet fsa
             );
           }
         }
+
+snippet Colu
+        Column(
+          children: [
+            ${0}
+          ],
+        ),
+
+snippet Row
+        Row(
+          children: [
+            ${0}
+          ],
+        ),
+
+snippet Stac
+        Stack(
+          children: [
+            ${0}
+          ],
+        ),
+
+snippet ListV
+        ListView(
+          children: [
+            ${0}
+          ],
+        ),
+
+snippet ListVb
+        ListView.builder(
+          itemCount: ${1:list}.length,
+          itemBuilder: (_, index) {
+            final ${2:item} = ${1:list}[index];
+
+            return ${0};
+          }
+        ),
+
+snippet ListVs
+        ListView.separator(
+          itemCount: ${1:list}.length,
+          separatorBuilder: (_, __) => ${2:const Divider()},
+          itemBuilder: (_, index) {
+            final ${3:item} = ${1:list}[index];
+
+            return ${0};
+          }
+        ),
+
+snippet GridV
+        GridView(
+          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: ${1},
+            mainAxisSpacing: ${2},
+            crossAxisSpacing: ${3},
+            mainAxisExtent: ${4},
+          ),
+          children: [
+            ${0}
+          ],
+        ),
+
+snippet GridVb
+        GridView.builder(
+          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: ${1},
+            mainAxisSpacing: ${2},
+            crossAxisSpacing: ${3},
+            mainAxisExtent: ${4},
+          ),
+          itemCount: ${5:list}.length,
+          itemBuilder: (_, index) {
+            final ${6:item} = ${5:list}[index];
+
+            return ${0};
+          }
+        ),
+
+snippet Wrap
+        Wrap(
+          children: [
+            ${0}
+          ],
+        ),
+
+snippet SizedB
+        SizedBox(
+          ${1:height}: ${2},
+          child: ${0}
+        ),
+
+snippet SizedBs
+        SizedBox.shrink()${0:,}
+
+snippet Contai
+        Container(
+          ${1:color}: ${2},
+          child: ${0},
+        ),
+
+snippet Text
+        Text(
+          ${1:text}${2:,}${0}
+        ),
+
+snippet Scaff
+        Scaffold(
+          body: ${0},
+        )
+
+snippet initSt
+        @override
+        void initState() {
+          super.initState();
+
+          ${0}
+        }
+
+snippet build
+        @override
+        Widget build(BuildContext context) {
+          return ${0};
+        }
+
