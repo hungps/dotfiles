@@ -1,13 +1,13 @@
 [submodule ".config/nvim"]
-	path = .config/nvim
-	url = git@github.com:hungps/nvim.git
-  branch = develop
+      path = .config/nvim
+      url = git@github.com:hungps/nvim.git
+      branch = develop
 [submodule ".oh-my-zsh/custom/plugins/zsh-syntax-highlighting"]
-	path = .oh-my-zsh/custom/plugins/zsh-syntax-highlighting
-	url = https://github.com/zsh-users/zsh-syntax-highlighting.git
+      path = .oh-my-zsh/custom/plugins/zsh-syntax-highlighting
+      url = https://github.com/zsh-users/zsh-syntax-highlighting.git
 [submodule ".oh-my-zsh/custom/plugins/zsh-autosuggestions"]
-	path = .oh-my-zsh/custom/plugins/zsh-autosuggestions
-	url = https://github.com/zsh-users/zsh-autosuggestions.git
+      path = .oh-my-zsh/custom/plugins/zsh-autosuggestions
+      url = https://github.com/zsh-users/zsh-autosuggestions.git
 [submodule ".oh-my-zsh/custom/plugins/zsh-syntax-highlighting-catppuccin-themes"]
-	path = .oh-my-zsh/custom/plugins/zsh-syntax-highlighting-catppuccin-themes
-	url = https://github.com/catppuccin/zsh-syntax-highlighting.git
+      path = .oh-my-zsh/custom/plugins/zsh-syntax-highlighting-catppuccin-themes
+      url = https://github.com/catppuccin/zsh-syntax-highlighting.git
