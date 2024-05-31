@@ -1,5 +1,6 @@
 import = [
-  "~/.config/alacritty/catppuccin-macchiato.toml"
+  # "~/.config/alacritty/catppuccin-macchiato.toml",
+  "~/.config/alacritty/one-dark.toml"
 ]
 
 [env]
