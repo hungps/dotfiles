@@ -74,7 +74,7 @@ export DOTFILES_PATH="$HOME/.dotfiles"
 export SDKROOT=$(xcrun -sdk macosx --show-sdk-path)
 
 # Flutter related
-export JAVA_HOME=$(/usr/libexec/java_home -v 19)
+export JAVA_HOME=$(/usr/libexec/java_home -v 17)
 export ANDROID_HOME="$HOME/Library/Android/sdk"
 export FLUTTER_ROOT="$HOME/fvm/default"
 

@@ -56,7 +56,7 @@ cask "font-jetbrains-mono-nerd-font"
 # Clipboard manager
 cask "maccy"
 # JDK from the Eclipse Foundation (Adoptium)
-cask "temurin@19"
+cask "temurin@17"
 mas "DevCleaner", id: 1388020431
 mas "Magnet", id: 441258766
 mas "The Unarchiver", id: 425424353
