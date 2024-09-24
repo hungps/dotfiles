@@ -81,6 +81,10 @@ export FLUTTER_ROOT="$HOME/fvm/default"
 # Snippets (mainly for vim)
 export SNIPPETS_PATH="$DOTFILES_PATH/snippets"
 
+# Ripgrep
+export RIPGREP_CONFIG_PATH="$HOME/.ripgreprc"
+export FZF_DEFAULT_COMMAND="rg --files --follow --no-ignore-vcs"
+
 # Ruby
 eval "$(rbenv init - zsh)"
 
