@@ -1,3 +1,4 @@
 --ignore bin
 --ignore snippets
 --ignore Brewfile
+--ignore .git
