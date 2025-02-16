@@ -1,4 +1,7 @@
 --ignore bin
 --ignore snippets
---ignore Brewfile
 --ignore .git
+--ignore .gitignore
+--ignore .gitmodules
+--ignore .stowrc
+
