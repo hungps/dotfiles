@@ -95,6 +95,7 @@ export PATH="$PATH:$FLUTTER_ROOT/.pub-cache/bin"
 export PATH="$PATH:$HOME/.pub-cache/bin"
 export PATH="$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$ANDROID_HOME/emulator"
 export PATH="$PATH:$(gem env home)/bin"
+export PATH="$PATH:$HOME/.local/bin"
 
 # Aliases
 alias pod='arch -x86_64 pod'

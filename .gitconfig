@@ -1,5 +1,15 @@
 [user]
 	useConfigOnly = true
+  signingkey = ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCwhoMLVmbmcYo6hCD5/drOT4m4+Bn8WzBRc3IPL4tjSvSbq32ls+q1cCLG5buRgCL3rZWH90xZDu8zWkkpElyGg2JxAthYOO22Hf7AmOGfV8oaSsUqRGHl0gMO6VXhU/0NprwtY/1rlniGrkBjkk0rBKc5ETTjC3dpLBnLw/EAx6zmjCwhNJewhpE5x7eNRUezDAR4bO/ctYDB1l2u2XwQlrYTQTqDm6AfMWPZfC9z7ScEYYHO3AJ4zXMvsdJHKpF5Ek/A4A5XubsOLCvpEkyn4jgrsjNrjvSaOR3j/luOX3Q4qMxFO9Dfdly9RPYYKQ+P6/JJgqYwyU9DWmlRKtEasSB7v8/ODDj3GXOPC6c3KMsBw8rDmH9uWjE8hYD9XYldW3RJDJlaJC+k39+SUjotexA0EOtQdv6QMCRzX2WDQwcHCBm+uv+YK/8NcaHuJxI6nqDn6tYifpCG75VFSaj+iTlz2eoC6rDT0RTlHNRXzbVXhHozWUjggnywxUDpmJ9LpSmVmxtr6uafBks/aweyCbb8rLtR9lmiKeaxvBpAhObxYTc/leZ8dwUKuQFoQiQ3MSUUYYIv4hX13I8CmJ8Gm19yW8jLOXTDhs1HvOjnvXrWN6Dtbyu+1Rh5zJ7J3jyQRYzRV7djHKqhE5ba4uljYRZnwa2000QjhEuhuBffFQ==
+
+[gpg]
+  format = ssh
+
+[gpg "ssh"]
+  program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
+
+[commit]
+  gpgsign = true
 
 [alias]
 	staash = stash --all
@@ -40,3 +50,4 @@
 
 [includeIf "gitdir:~/Sources/personal/"]
 	path = .gitconfig-personal
+
