@@ -2,7 +2,8 @@ local wezterm = require("wezterm")
 local config = wezterm.config_builder()
 
 config.color_scheme = "nord"
-config.window_decorations = "INTEGRATED_BUTTONS|RESIZE"
+config.window_background_opacity = 0.999
+config.window_decorations = "TITLE|RESIZE|MACOS_FORCE_DISABLE_SHADOW"
 config.window_padding = {
   top = 0,
   left = 0,
