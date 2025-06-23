@@ -78,7 +78,6 @@ plugins=(
   zsh-syntax-highlighting
   zsh-completions
   zsh-autosuggestions
-  zsh-github-copilot
 )
 
 fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
@@ -158,3 +157,5 @@ alias ssh="TERM=xterm-256color $(which ssh)"
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

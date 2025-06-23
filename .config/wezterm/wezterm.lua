@@ -1,7 +1,7 @@
 local wezterm = require("wezterm")
 local config = wezterm.config_builder()
 
-config.color_scheme = "nord"
+config.color_scheme = "Catppuccin Macchiato (Gogh)"
 config.window_background_opacity = 0.999
 config.window_decorations = "TITLE|RESIZE|MACOS_FORCE_DISABLE_SHADOW"
 config.window_padding = {
@@ -17,6 +17,7 @@ config.font = wezterm.font_with_fallback({
     weight = "Medium",
     harfbuzz_features = { "calt=0", "clig=0", "liga=0" },
   },
+  { family = "Hiragino Sans" },
 })
 
 config.font_size = 14.0

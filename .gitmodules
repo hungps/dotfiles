@@ -1,4 +1,20 @@
 [submodule ".config/nvim"]
       path = .config/nvim
-      url = git@github.com:hungps/nvim.git
+      url = https://github.com/hungps/nvim.git
       branch = develop
+
+[submodule ".config/oh-my-zsh/custom/plugins/zsh-autosuggestions"]
+      path = .config/oh-my-zsh/custom/plugins/zsh-autosuggestions
+      url = https://github.com/zsh-users/zsh-autosuggestions.git
+      branch = master
+
+[submodule ".config/oh-my-zsh/custom/plugins/zsh-completions"]
+      path = .config/oh-my-zsh/custom/plugins/zsh-completions
+      url = https://github.com/zsh-users/zsh-completions.git
+      branch = master
+
+[submodule ".config/oh-my-zsh/custom/plugins/zsh-syntax-highlighting"]
+      path = .config/oh-my-zsh/custom/plugins/zsh-syntax-highlighting
+      url = https://github.com/zsh-users/zsh-syntax-highlighting.git
+      branch = master
+
