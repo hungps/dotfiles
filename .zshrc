@@ -138,6 +138,9 @@ export SNIPPETS_PATH="$DOTFILES_PATH/snippets"
 # Ruby
 eval "$(rbenv init - zsh)"
 
+# zk
+export ZK_NOTEBOOK_DIR="$HOME/Documents/Notes"
+
 # PATH binding
 export PATH="$PATH:/usr/local/bin"
 export PATH="$PATH:$FLUTTER_ROOT/bin"
