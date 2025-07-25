@@ -220,6 +220,18 @@ automatically-unhide-macos-hidden-apps = false
     run = 'layout floating'
 
 [[on-window-detected]]
+    if.app-id = 'com.culturedcode.ThingsMac'
+    run = 'layout floating'
+
+[[on-window-detected]]
+    if.app-id = 'com.busymac.busycal3'
+    run = 'layout floating'
+
+[[on-window-detected]]
+    if.app-id = 'com.apple.finder'
+    run = 'layout floating'
+
+[[on-window-detected]]
     if.app-id = 'com.github.wez.wezterm'
     run = 'move-node-to-workspace T'
 
@@ -229,6 +241,10 @@ automatically-unhide-macos-hidden-apps = false
 
 [[on-window-detected]]
     if.app-id = 'com.google.Chrome'
+    run = 'move-node-to-workspace B'
+
+[[on-window-detected]]
+    if.app-id = 'app.zen-browser.zen'
     run = 'move-node-to-workspace B'
 
 [[on-window-detected]]
