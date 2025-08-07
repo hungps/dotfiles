@@ -1,5 +1,4 @@
 --ignore bin
---ignore snippets
 --ignore .git
 --ignore .gitignore
 --ignore .gitmodules

@@ -26,9 +26,10 @@ stow .
 echo "Installing Homebrew Bundle..."
 brew bundle install --file=~/Brewfile;
 
-echo "Install zsh...."
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+echo "Setting up tmux...."
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
-# Switching to zsh
-chsh -s "$(which zsh)"
+echo "Setting up fish shell...."
+echo "$(which fish)" | sudo tee -a /etc/shells
+chsh -s "$(which fish)"
 
