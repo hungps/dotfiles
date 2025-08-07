@@ -9,7 +9,11 @@ after-login-command = []
 # You can use it to add commands that run after AeroSpace startup.
 # 'after-startup-command' is run after 'after-login-command'
 # Available commands : https://nikitabobko.github.io/AeroSpace/commands
-after-startup-command = []
+after-startup-command = [
+  'exec-and-forget borders active_color=0xffe1e3e4 inactive_color=0x00000000 width=2.0'
+]
+
+exec-on-workspace-change = []
 
 # Start AeroSpace at login
 start-at-login = true
@@ -57,12 +61,12 @@ automatically-unhide-macos-hidden-apps = false
 #                 See:
 #                 https://nikitabobko.github.io/AeroSpace/guide#assign-workspaces-to-monitors
 [gaps]
-    inner.horizontal = 0
-    inner.vertical =   0
-    outer.left =       0
-    outer.bottom =     0
-    outer.top =        0
-    outer.right =      0
+    inner.horizontal = 2
+    inner.vertical =   2
+    outer.left =       2
+    outer.bottom =     2
+    outer.top =        2
+    outer.right =      2
 
 # 'main' binding mode declaration
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
@@ -221,12 +225,20 @@ if.app-id = 'com.apple.finder'
 run = 'layout floating'
 
 [[on-window-detected]]
+if.app-id = 'com.busymac.busycal3'
+run = 'layout floating'
+
+[[on-window-detected]]
 if.app-id = 'ch.protonvpn.mac'
 run = 'layout floating'
 
 # Normal
 [[on-window-detected]]
 if.app-id = 'net.kovidgoyal.kitty'
+run = 'move-node-to-workspace T'
+
+[[on-window-detected]]
+if.app-id = 'com.apple.iphonesimulator'
 run = 'move-node-to-workspace T'
 
 [[on-window-detected]]
