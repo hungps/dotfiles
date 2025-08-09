@@ -13,4 +13,11 @@ Thumbs.db
 .Spotlight-V100
 .Trashes
 
+# Mise local config
+mise.local.toml
+
+# nvim local config
+.nvim.lua
+
 .ruby-lsp
+

@@ -1,4 +1,14 @@
 [tools]
 ruby = "3"
-node = "24"
+node = "latest"
 usage = "latest"
+java = "17.0.0"
+flutter = "latest"
+dart = "latest"
+lua-language-server = "latest"
+stylua = "latest"
+rust = "latest"
+go = "latest"
+
+[alias]
+flutter = "asdf:nyuyuyu/asdf-flutter.git"
