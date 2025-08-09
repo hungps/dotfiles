@@ -1,6 +1,5 @@
-tap "adoptopenjdk/openjdk"
+tap "benjiwolff/neovim-nightly"
 tap "buo/cask-upgrade"
-tap "dart-lang/dart"
 tap "homebrew/bundle"
 tap "homebrew/cask-fonts"
 tap "homebrew/services"
@@ -41,24 +40,10 @@ brew "make"
 brew "mas"
 # Polyglot runtime manager (asdf rust clone)
 brew "mise"
-# Ambitious Vim-fork focused on extensibility and agility
-brew "neovim"
 # Manage multiple Node.js versions
 brew "nvm"
 # Interpreted, interactive, object-oriented programming language
 brew "python@3.13"
-# Execute binaries from Python packages in isolated environments
-brew "pipx"
-# Python interface to Tcl/Tk
-brew "python-tk@3.13"
-# Interpreted, interactive, object-oriented programming language
-brew "python@3.12"
-# Interpreted, interactive, object-oriented programming language
-brew "python@3.9"
-# Ruby version manager
-brew "rbenv"
-# Reattach process (e.g., tmux) to background
-brew "reattach-to-user-namespace"
 # Search tool like grep and The Silver Searcher
 brew "ripgrep"
 # Organize software neatly under a single directory tree (e.g. /usr/local)
@@ -67,6 +52,8 @@ brew "stow"
 brew "tmux"
 # Display directories as trees (with optional color/HTML output)
 brew "tree"
+# Parser generator tool
+brew "tree-sitter-cli"
 # Extraction utility for .zip compressed archives
 brew "unzip"
 # Internet file retriever
@@ -128,6 +115,8 @@ cask "kitty"
 cask "mac-mouse-fix"
 # Mouse control with the keyboard
 cask "mouseless"
+# Vim-fork focused on extensibility and usability
+cask "neovim-nightly"
 # VPN client focusing on security
 cask "protonvpn"
 # Screenshot measurement and annotation tool
@@ -136,10 +125,6 @@ cask "shottr"
 cask "steam"
 # Control windows and applications right from your trackpad
 cask "swish"
-# JDK from the Eclipse Foundation (Adoptium)
-cask "temurin@17"
-# JDK from the Eclipse Foundation (Adoptium)
-cask "temurin@19"
 # GPU-accelerated cross-platform terminal emulator and multiplexer
 cask "wezterm"
 mas "Dropover", id: 1355679052
