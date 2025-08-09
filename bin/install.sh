@@ -33,3 +33,5 @@ echo "Setting up fish shell...."
 echo "$(which fish)" | sudo tee -a /etc/shells
 chsh -s "$(which fish)"
 
+echo "Setting scripts permission"
+chmod +x ~/.dotfiles/bin/tmux-sessionizer
