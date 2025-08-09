@@ -1,3 +1,6 @@
+[settings]
+legacy_version_file = true
+
 [tools]
 ruby = "3"
 node = "latest"
