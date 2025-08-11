@@ -11,8 +11,8 @@ if status --is-login
   set -gx PATH $PATH $HOME/.local/bin
 
   set -gx DOTFILES_PATH $HOME/.dotfiles
+  set -gx EDITOR (which nvim)
 end
-
 
 alias vim="nvim"
 alias vi="nvim"
