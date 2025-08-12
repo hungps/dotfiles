@@ -58,6 +58,8 @@ brew "tree-sitter-cli"
 brew "unzip"
 # Internet file retriever
 brew "wget"
+# Blazing fast terminal file manager written in Rust, based on async I/O
+brew "yazi"
 # Plain text note-taking assistant
 brew "zk"
 # Shell extension to navigate your filesystem faster
