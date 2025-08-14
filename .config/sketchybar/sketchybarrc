@@ -1,0 +1,113 @@
+#!/usr/bin/env bash
+
+PLUGIN_DIR="$CONFIG_DIR/plugins"
+
+COLOR_BG=0xff242933
+COLOR_FG_ACTIVE=0xffd8dee9
+COLOR_FG_INACTIVE=0xff4c566a
+
+sketchybar --bar      color=0x00000000 \
+                      position=top     \
+                      height=24        \
+                      padding_left=4   \
+                      padding_right=4  \
+                      y_offset=6
+
+sketchybar --default  icon.font="Hack Nerd Font:Bold:17.0"  \
+                      label.font="Hack Nerd Font:Bold:14.0" \
+                      icon.padding_left=6                   \
+                      icon.padding_right=6                  \
+                      icon.color=$COLOR_FG_ACTIVE           \
+                      icon.drawing=off                      \
+                      label.padding_left=6                  \
+                      label.padding_right=6                 \
+                      label.color=$COLOR_FG_ACTIVE          \
+                      label.drawing=off                     \
+                      popup.background.color=$COLOR_BG      \
+                      background.height=24                  \
+                      background.padding_left=2             \
+                      background.padding_right=2            \
+                      background.corner_radius=4            \
+                      background.color=$COLOR_BG            \
+                      background.drawing=on
+
+####### WORKSPACES
+sketchybar --add event aerospace_workspace_change
+
+WORKSPACES=("T" "W" "C" "M" "G" "O")
+
+for sid in ${WORKSPACES[@]}; do
+  case $sid in
+    "T") LABEL="term"    ICON="";;
+    "W") LABEL="web"     ICON="󰖟";;
+    "C") LABEL="comm"    ICON="";;
+    "M") LABEL="music"   ICON="󰎇";;
+    "G") LABEL="game"    ICON="󰸳";;
+    "O") LABEL="other"   ICON="";;
+    *)   LABEL="unknown" ICON=""
+  esac
+
+  sketchybar --add item  space.$sid left                                   \
+             --subscribe space.$sid aerospace_workspace_change             \
+             --set       space.$sid background.drawing=off                 \
+                                    icon="$ICON"                           \
+                                    icon.drawing=on                        \
+                                    icon.color=$COLOR_FG_INACTIVE          \
+                                    icon.highlight_color=$COLOR_FG_ACTIVE  \
+                                    script="$PLUGIN_DIR/aerospace.sh $sid" \
+                                    click_script="aerospace workspace $sid"
+done
+
+## background.padding_* is not working with bracket (yet), use spacing instead
+sketchybar --add bracket spaces '/space\..*/' \
+           --set         spaces background.color=$COLOR_BG \
+           --add item    spacing left \
+           --set         spacing width=4 background.drawing=off
+
+####### NOTIFICATIONS
+NOTIFY_APPS=("Google Chat" "Google Chrome")
+
+for notify_app in "${NOTIFY_APPS[@]}"; do
+  case "$notify_app" in
+     "Google Chat") ICON="";;
+     "Google Chrome") ICON="";;
+     *) ICON=""
+  esac
+
+  sketchybar --add item  notify."$notify_app" left            \
+             --subscribe notify."$notify_app" system_woke     \
+             --set       notify."$notify_app" icon=$ICON      \
+                                              icon.drawing=on \
+                                              label.padding_left=0 \
+                                              update_freq=120 \
+                                              script="$PLUGIN_DIR/notify.sh \"$notify_app\""
+done
+
+####### CURRENT APP
+sketchybar --add item   front_app   center             \
+           --subscribe  front_app   front_app_switched \
+           --set        front_app   script="$PLUGIN_DIR/front_app.sh"
+
+####### MISC
+sketchybar --add item   clock       right \
+           --set        clock       update_freq=1 \
+                                    label.drawing=on \
+                                    script="$PLUGIN_DIR/clock.sh"
+
+sketchybar --add item   battery     right                           \
+           --subscribe  battery     system_woke power_source_change \
+           --set        battery     update_freq=120 \
+                                    icon.drawing=on \
+                                    icon.padding_right=0 \
+                                    label.drawing=on \
+                                    script="$PLUGIN_DIR/battery.sh"
+
+sketchybar --add item   volume      right         \
+           --subscribe  volume      volume_change \
+           --set        volume      icon.drawing=on \
+                                    script="$PLUGIN_DIR/volume.sh"
+
+sketchybar --add alias "BusyCal Menu & Alarms,Item-0" right
+
+sketchybar --update
+sketchybar --hotload true

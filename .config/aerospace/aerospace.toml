@@ -15,10 +15,7 @@ after-startup-command = [
   'workspace O'
 ]
 
-exec-on-workspace-change = ['/bin/bash', '-c',
-    'sketchybar --trigger aerospace_workspace_change FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE',
-    '~/.config/aerospace/plugins/pip.sh',
-]
+exec-on-workspace-change = ['/bin/bash', '-c', '${HOME}/.config/aerospace/plugins/on-workspace-changed.sh']
 
 # Start AeroSpace at login
 start-at-login = true
@@ -234,70 +231,56 @@ automatically-unhide-macos-hidden-apps = true
 
 # Terminal
 [[on-window-detected]]
-if.app-id = 'net.kovidgoyal.kitty'
-run = ['move-node-to-workspace T']
+    if.app-id = 'net.kovidgoyal.kitty'
+    run = ['move-node-to-workspace T']
 
 [[on-window-detected]]
-if.app-id = 'com.apple.iphonesimulator'
-run = ['move-node-to-workspace T']
+    if.app-id = 'com.apple.iphonesimulator'
+    run = ['move-node-to-workspace T']
 
 [[on-window-detected]]
-if.app-name-regex-substring = 'Android Emulator'
-if.window-title-regex-substring = 'Android Emulator'
-run = ['move-node-to-workspace T']
+    if.app-name-regex-substring = 'Android Emulator'
+    if.window-title-regex-substring = 'Android Emulator'
+    run = ['move-node-to-workspace T']
 
 [[on-window-detected]]
-if.app-id = 'com.apple.dt.Xcode'
-run = ['move-node-to-workspace T']
+    if.app-id = 'com.apple.dt.Xcode'
+    run = ['move-node-to-workspace T']
 
 [[on-window-detected]]
-if.app-id = 'com.google.android.studio'
-run = ['move-node-to-workspace T']
+    if.app-id = 'com.google.android.studio'
+    run = ['move-node-to-workspace T']
 
 # Web
 [[on-window-detected]]
-if.app-id = 'com.google.Chrome'
-run = ['move-node-to-workspace W']
+    if.app-id = 'com.google.Chrome'
+    run = ['move-node-to-workspace W']
 
 # Communication
 [[on-window-detected]]
-if.app-id = 'com.google.Chrome.app.mdpkiolbdkhdjpekfbkbmhigcaggjagi' # Google Chat
-run = ['move-node-to-workspace C']
+    if.app-id = 'com.google.Chrome.app.mdpkiolbdkhdjpekfbkbmhigcaggjagi' # Google Chat
+    run = ['move-node-to-workspace C']
 
 # Music
 [[on-window-detected]]
-if.app-id = 'com.github.th-ch.youtube-music'
-run = ['move-node-to-workspace M']
+    if.app-id = 'com.github.th-ch.youtube-music'
+    run = ['move-node-to-workspace M']
 
 # Game
 [[on-window-detected]]
-if.app-id = 'com.valvesoftware.steam'
-run = ['move-node-to-workspace G']
+    if.app-id = 'com.valvesoftware.steam'
+    run = ['move-node-to-workspace G']
 
 # Float
 [[on-window-detected]]
-if.app-id = 'com.culturedcode.ThingsMac'
-run = ['layout floating']
+    if.app-id = 'com.apple.finder'
+    run = ['layout floating']
 
 [[on-window-detected]]
-if.app-id = 'com.apple.finder'
-run = ['layout floating']
+    if.app-id = 'ch.protonvpn.mac'
+    run = ['layout floating']
 
 [[on-window-detected]]
-if.app-id = 'com.busymac.busycal3'
-run = ['layout floating']
-
-[[on-window-detected]]
-if.app-id = 'ch.protonvpn.mac'
-run = ['layout floating']
-
-[[on-window-detected]]
-if.app-id = 'com.apple.ActivityMonitor'
-run = ['layout floating']
-
-
-# Other
-[[on-window-detected]]
-check-further-callbacks = true
-run = ['move-node-to-workspace O']
+    if.app-id = 'com.apple.ActivityMonitor'
+    run = ['layout floating']
 
