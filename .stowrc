@@ -1,6 +1,5 @@
---ignore bin
 --ignore .git
---ignore .gitignore
 --ignore .gitmodules
 --ignore .stowrc
+--ignore install.sh
 
