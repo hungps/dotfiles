@@ -1,1 +1,1 @@
-alias pod="arch -x86_64 pod"
+alias pod="arch -arm64 pod"
