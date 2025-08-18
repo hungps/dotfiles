@@ -1,16 +1,2 @@
 [notebook]
-dir = "~/Notes"
-
-[format.markdown]
-link-format = "[[{{filename}}|{{title}}]]"
-hashtags = true
-multiword-tags = true
-colon-tags = false
-
-[tool]
-editor = "nvim"
-
-[alias]
-ls = "zk list $@"
-last = "zk edit --limit 1 --sort modified- $@"
-config = '$EDITOR "$ZK_NOTEBOOK_DIR/.zk/config.toml"'
+dir = "~/Documents/Notes"
