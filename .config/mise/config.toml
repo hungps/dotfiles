@@ -16,4 +16,4 @@ go = "latest"
 python = "3"
 
 [alias]
-flutter = "asdf:nyuyuyu/asdf-flutter.git"
+flutter = "asdf:nyuyuyu/asdf-flutter"
