@@ -10,7 +10,7 @@ if [[ $STATUS_LABEL =~ \"label\"=\"([^\"]*)\" ]]; then
     LABEL="${BASH_REMATCH[1]}"
 
     if [[ $LABEL == "•" ]] || [[ $LABEL =~ ^[0-9]+$ ]]; then
-      sketchybar --set "$NAME" label="1$LABEL" icon.drawing=on label.drawing=on background.drawing=on
+      sketchybar --set "$NAME" label="$LABEL" icon.drawing=on label.drawing=on background.drawing=on
     fi
 fi
 
