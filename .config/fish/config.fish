@@ -12,6 +12,9 @@ if status --is-login
 
   set -gx DOTFILES_PATH $HOME/.dotfiles
   set -gx EDITOR (which nvim)
+  set -gx SSH_AUTH_SOCK $HOME/.bitwarden-ssh-agent.sock
+
+  source ~/.config/fish/secrets.fish
 end
 
 alias vim="nvim"

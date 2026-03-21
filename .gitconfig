@@ -1,53 +1,58 @@
 [user]
-	useConfigOnly = true
-  signingkey = ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCwhoMLVmbmcYo6hCD5/drOT4m4+Bn8WzBRc3IPL4tjSvSbq32ls+q1cCLG5buRgCL3rZWH90xZDu8zWkkpElyGg2JxAthYOO22Hf7AmOGfV8oaSsUqRGHl0gMO6VXhU/0NprwtY/1rlniGrkBjkk0rBKc5ETTjC3dpLBnLw/EAx6zmjCwhNJewhpE5x7eNRUezDAR4bO/ctYDB1l2u2XwQlrYTQTqDm6AfMWPZfC9z7ScEYYHO3AJ4zXMvsdJHKpF5Ek/A4A5XubsOLCvpEkyn4jgrsjNrjvSaOR3j/luOX3Q4qMxFO9Dfdly9RPYYKQ+P6/JJgqYwyU9DWmlRKtEasSB7v8/ODDj3GXOPC6c3KMsBw8rDmH9uWjE8hYD9XYldW3RJDJlaJC+k39+SUjotexA0EOtQdv6QMCRzX2WDQwcHCBm+uv+YK/8NcaHuJxI6nqDn6tYifpCG75VFSaj+iTlz2eoC6rDT0RTlHNRXzbVXhHozWUjggnywxUDpmJ9LpSmVmxtr6uafBks/aweyCbb8rLtR9lmiKeaxvBpAhObxYTc/leZ8dwUKuQFoQiQ3MSUUYYIv4hX13I8CmJ8Gm19yW8jLOXTDhs1HvOjnvXrWN6Dtbyu+1Rh5zJ7J3jyQRYzRV7djHKqhE5ba4uljYRZnwa2000QjhEuhuBffFQ==
+  useConfigOnly = true
 
-[gpg]
-  format = ssh
+[core]
+  excludesfile = ~/.gitignore
+  attributesfile = ~/.gitattributes
+  trustctime = false
+  precomposeunicode = false
+  untrackedCache = true
+  pager = delta
 
-[gpg "ssh"]
-  program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
-
-[commit]
-  gpgsign = true
-
-[alias]
-	staash = stash --all
+[init]
+  defaultBranch = develop
 
 [rerere]
 	enabled = true
 
-[core]
-	# Use custom `.gitignore` and `.gitattributes`.
-	excludesfile = ~/.gitignore
-	attributesfile = ~/.gitattributes
-
-	# Make `git rebase` safer on macOS.
-	# More info: <http://www.git-tower.com/blog/make-git-rebase-safe-on-osx/>
-	trustctime = false
-
-	# Prevent showing files whose names contain non-ASCII symbols as unversioned.
-	# http://michael-kuehnel.de/git/2014/11/21/git-mac-osx-and-german-umlaute.html
-	precomposeunicode = false
-
-	# Speed up commands involving untracked files such as `git status`.
-	# https://git-scm.com/docs/git-update-index#_untracked_cache
-	untrackedCache = true
-
 [branch]
-	# Show most recently changed branches first.
-	sort = -committerdate
-
-[help]
-	autocorrect = 1
-
-[init]
-	defaultBranch = develop
+  sort = -committerdate
 
 [push]
-	# https://git-scm.com/docs/git-config#Documentation/git-config.txt-pushdefault
-	default = simple
+  default = simple
+  ff = only
 
-[includeIf "gitdir:~/Sources/personal/"]
-	path = .gitconfig-personal
+[help]
+  autocorrect = 1
+
+[commit]
+  verbose = true
+
+[gpg]
+  format = ssh
+
+[diff]
+  algorithm = histogram
+
+[interactive]
+  diffFilter = delta --color-only
+
+[delta]
+  navigate = true
+  dark = true
+
+[merge]
+  conflictStyle = zdiff3
+
+[url "git@github.com:"]
+  insteadOf = "gh:"
+
+[includeIf "gitdir:~/.dotfiles/"]
+  path = ~/Sources/personal/.gitconfig
+
+[includeIf "gitdir:~/Sources/personal/**/*"]
+  path = ~/Sources/personal/.gitconfig
+
+[includeIf "gitdir:~/Sources/work/**/*"]
+  path = ~/Sources/work/.gitconfig
 

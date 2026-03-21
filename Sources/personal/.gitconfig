@@ -1,0 +1,7 @@
+[user]
+  name = Hung Pham Sy
+  email = 25026496+hungps@users.noreply.github.com
+  signingkey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIM3OoxOsP58inp5yV7hBmIv105ujsQctn2ZlnN6RdiCa"
+
+[commit]
+  gpgsign = true
